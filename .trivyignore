@@ -1,0 +1,9 @@
+# Awaiting an upstream Distroless image rebuild containing
+# Debian libssl3 security updates (deb12u2).
+
+CVE-2026-31789
+CVE-2026-28387
+CVE-2026-28388
+CVE-2026-28389
+CVE-2026-28390
+CVE-2026-45447
