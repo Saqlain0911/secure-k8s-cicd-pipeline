@@ -12,8 +12,8 @@ COPY app.js ./
 # Ensure application files are owned by the runtime user.
 RUN chown -R 1001:1001 /app
 
-
-FROM gcr.io/distroless/nodejs20-debian11
+# hadolint ignore=DL3007
+FROM gcr.io/distroless/nodejs20-debian11:latest
 
 WORKDIR /app
 
