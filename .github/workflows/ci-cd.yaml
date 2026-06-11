@@ -1,0 +1,32 @@
+name: Secure CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile
+
+      - name: Build Docker Image locally
+        run: docker build -t secure-k8s-app:${{ github.sha }} .
+
+      - name: Scan Image with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'secure-k8s-app:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
