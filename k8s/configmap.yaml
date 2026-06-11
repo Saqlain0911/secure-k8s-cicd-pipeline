@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  POSTGRES_DB: dummy_db
+  POSTGRES_HOST: postgres-service
+  # The Node.js app constructs the URL from the injected variables
+  DATABASE_URL: "postgresql://dummy_user:dummy_pass@postgres-service:5432/dummy_db"
