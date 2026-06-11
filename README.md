@@ -102,8 +102,8 @@ secure-k8s-cicd-pipeline/
 
 ## Author & Project Context
 
-**Saqlain Sheikh**
-DevOps & Cloud Enthusiast
+**Saqlain Sheikh**<br>
+DevOps & Cloud Enthusiast<br>
 AWS • Terraform • Docker • Kubernetes • DevSecOps
 
 This project was engineered to address modern software supply-chain vulnerabilities and deployment reliability challenges. The objective was to build a delivery pipeline that treats security as a first-class citizen—demonstrating that an application can be highly optimized, thoroughly scanned, keylessly authenticated, and durably orchestrated without sacrificing deployment speed or automation efficiency.
