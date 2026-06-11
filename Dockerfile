@@ -13,7 +13,7 @@ COPY app.js ./
 RUN chown -R 1001:1001 /app
 
 # hadolint ignore=DL3007
-FROM gcr.io/distroless/nodejs20-debian11:latest
+FROM gcr.io/distroless/nodejs20-debian12:latest
 
 WORKDIR /app
 
